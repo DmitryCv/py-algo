@@ -4,6 +4,7 @@ import cProfile
 
 
 def sieve(n):
+    if n == 1: return 2
     # k-ое простое не превосходит 1,5 k ln( k ) при k > 1:
     n_range = int(1.5 * n * math.log(n)) + 1
     a = [i for i in range(n_range + 1)]
@@ -21,7 +22,7 @@ def sieve(n):
 
 
 def prime(n):
-    b = []
+    b = [2]
     n_range = int(1.5 * n * math.log(n)) + 1
 
     for i in range(2, n_range + 1):
